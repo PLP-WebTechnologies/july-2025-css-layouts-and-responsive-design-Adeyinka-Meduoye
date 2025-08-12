@@ -1,0 +1,111 @@
+/* ========== Base Styles ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* ========== Layout Grid ========== */
+body {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+}
+
+/* Section Styles */
+.header {
+  grid-area: header;
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+.nav {
+  grid-area: nav;
+  background: #555;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav li {
+  margin: 0.5rem;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.content {
+  background: #f4f4f4;
+  padding: 1rem;
+}
+
+.sidebar {
+  background: #ddd;
+  padding: 1rem;
+}
+
+.footer {
+  grid-area: footer;
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/* ========== Flexbox for Cards ========== */
+.card-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  flex: 1 1 200px;
+  text-align: center;
+}
+
+/* ========== Responsive Design ========== */
+
+/* Tablet View */
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 480px) {
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
